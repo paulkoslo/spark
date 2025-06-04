@@ -230,9 +230,7 @@ const LetterGlitch = ({
     position: 'relative',
     width: '100%',
     height: '100%',
-    // Extend gradient to match the page background colour
-    background:
-      'linear-gradient(to bottom, #000000 0%, #102040 40%, #61b3cd 80%, #2b4539 100%)',
+    background: 'linear-gradient(to bottom, #000000, #102040, #61b3cd)', // Smooth transition
     overflow: 'hidden',
   };
 
