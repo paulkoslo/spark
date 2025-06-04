@@ -1,5 +1,23 @@
 // @ts-nocheck
 import { useRef, useEffect } from 'react';
+import { motion } from 'framer-motion';
+
+const GlitchText = ({ text }) => (
+  <motion.div
+    className="glitch"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 0.5 }}
+  >
+    <span className="glitch-layer" aria-hidden="true">
+      {text}
+    </span>
+    <span className="glitch-layer" aria-hidden="true">
+      {text}
+    </span>
+    <span className="glitch-layer">{text}</span>
+  </motion.div>
+);
 
 const LetterGlitch = ({
   glitchColors = ['#2b4539', '#61dca3', '#61b3dc'],
@@ -240,6 +258,7 @@ const LetterGlitch = ({
       <canvas ref={canvasRef} style={canvasStyle} />
       {outerVignette && <div style={outerVignetteStyle}></div>}
       {centerVignette && <div style={centerVignetteStyle}></div>}
+      <GlitchText text="DATASPARK" />
     </div>
   );
 };
