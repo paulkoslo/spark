@@ -1,6 +1,7 @@
 // @ts-nocheck
 import { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import FuzzyText from './FuzzyText';
 
 const GlitchText = ({ text }) => (
   <motion.div
@@ -258,7 +259,7 @@ const LetterGlitch = ({
       <canvas ref={canvasRef} style={canvasStyle} />
       {outerVignette && <div style={outerVignetteStyle}></div>}
       {centerVignette && <div style={centerVignetteStyle}></div>}
-      <GlitchText text="DATASPARK" />
+      <FuzzyText>Fuzzy Text</FuzzyText>
     </div>
   );
 };
