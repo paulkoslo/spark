@@ -41,7 +41,8 @@ export default function Hero() {
         <motion.p
           className="text-lg text-slate-300 mx-auto max-w-xl"
           initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0, delay: 0.2 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
         >
           From messy spreadsheets to live dashboards—turn raw numbers into ROI.
         </motion.p>
@@ -50,7 +51,8 @@ export default function Hero() {
           aria-label="Book a Discovery Call"
           className="inline-block px-6 py-3 rounded-md bg-brand-500 text-white drop-shadow-[0_0_4px_#00E2FF]"
           initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0, delay: 0.4 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
         >
           Book a Discovery Call
         </motion.a>
