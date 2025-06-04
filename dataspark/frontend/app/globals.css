@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply min-h-screen bg-radial from-[#0B143B] via-[#041B56] to-[#001735] text-slate-100;
+}
