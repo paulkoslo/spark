@@ -1,0 +1,14 @@
+# Node modules cache
+node_modules/
+.next/
+
+# Python virtual environments
+venv/
+__pycache__/
+
+# Environment files
+.env*
+.env.local
+
+# macOS
+.DS_Store
