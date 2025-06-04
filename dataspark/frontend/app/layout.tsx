@@ -10,7 +10,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-[#001F3F] text-white overflow-y-auto">
+      <body className="min-h-screen bg-[#000033] text-white overflow-y-auto overscroll-none">
         <Hero />
         {children}
       </body>
