@@ -21,7 +21,7 @@ const GlitchText = ({ text }) => (
 );
 
 const LetterGlitch = ({
-  glitchColors = ['#2b4539', '#61dca3', '#61b3dc'],
+  glitchColors = ['#2b4539', '#102040', '#61b3cd'],
   glitchSpeed = 30,
   centerVignette = true,
   outerVignette = true,
@@ -205,9 +205,15 @@ const LetterGlitch = ({
     const handleResize = () => {
       clearTimeout(resizeTimeout);
       resizeTimeout = setTimeout(() => {
-        cancelAnimationFrame(animationRef.current); // Stop animation loop during resize
-        resizeCanvas();
-        animate(); // Restart after resizing
+        // Fade out effect
+        canvasRef.current.style.opacity = '0';
+        setTimeout(() => {
+          cancelAnimationFrame(animationRef.current); // Stop animation loop during resize
+          resizeCanvas();
+          animate(); // Restart after resizing
+          // Fade in effect
+          canvasRef.current.style.opacity = '1';
+        }, 300); // Duration of fade-out effect
       }, 100);
     };
 
@@ -224,7 +230,7 @@ const LetterGlitch = ({
     position: 'relative',
     width: '100%',
     height: '100%',
-    backgroundColor: '#000000',
+    background: 'linear-gradient(to bottom, #000000, #102040, #61b3cd)', // Smooth transition
     overflow: 'hidden',
   };
 
@@ -241,7 +247,7 @@ const LetterGlitch = ({
     width: '100%',
     height: '100%',
     pointerEvents: 'none',
-    background: 'radial-gradient(circle, rgba(0,0,0,0) 60%, rgba(0,0,0,1) 100%)',
+    background: 'radial-gradient(circle, rgba(0,0,0,0) 70%, rgba(0,0,0,0.8) 100%)', // Adjusted gradient
   };
 
   const centerVignetteStyle = {
@@ -251,13 +257,13 @@ const LetterGlitch = ({
     width: '100%',
     height: '100%',
     pointerEvents: 'none',
-    background: 'radial-gradient(circle, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 60%)',
+    background: 'radial-gradient(circle, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 70%)', // Adjusted gradient
   };
 
   return (
     <div style={containerStyle}>
       <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: 10 }}>
-        <FuzzyText>Dataspark</FuzzyText>
+        <FuzzyText>DolphinData</FuzzyText>
       </div>
       <canvas ref={canvasRef} style={canvasStyle} />
       {outerVignette && <div style={outerVignetteStyle}></div>}

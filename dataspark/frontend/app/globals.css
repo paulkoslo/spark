@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 body {
-  @apply min-h-screen bg-radial from-[#0B143B] via-[#041B56] to-[#001735] text-slate-100;
+  @apply min-h-screen bg-radial from-[#0A0A2A] via-[#102040] to-[#2b4539] text-slate-100;
 }
