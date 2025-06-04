@@ -9,8 +9,8 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className="min-h-screen bg-[#000033] text-white overflow-y-auto overscroll-none">
+    <html lang="en" className="overscroll-none">
+      <body className="bg-[#041B56] text-slate-100 overscroll-none">
         <Hero />
         {children}
       </body>
