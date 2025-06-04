@@ -15,12 +15,12 @@ interface FuzzyTextProps {
 
 export default function FuzzyText({
   children,
-  fontSize = "clamp(2rem, 10vw, 10rem)",
+  fontSize = 90, // Increased font size
   fontWeight = 900,
   fontFamily = "inherit",
   color = "#fff",
   enableHover = true,
-  baseIntensity = 0.18,
+  baseIntensity = 0.1,
   hoverIntensity = 0.5,
 }: FuzzyTextProps) {
   const canvasRef = useRef<HTMLCanvasElement & { cleanupFuzzyText?: () => void }>(

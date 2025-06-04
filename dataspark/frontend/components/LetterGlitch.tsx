@@ -22,8 +22,8 @@ const GlitchText = ({ text }) => (
 
 const LetterGlitch = ({
   glitchColors = ['#2b4539', '#61dca3', '#61b3dc'],
-  glitchSpeed = 50,
-  centerVignette = false,
+  glitchSpeed = 30,
+  centerVignette = true,
   outerVignette = true,
   smooth = true,
 }) => {
@@ -256,10 +256,12 @@ const LetterGlitch = ({
 
   return (
     <div style={containerStyle}>
+      <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: 10 }}>
+        <FuzzyText>Dataspark</FuzzyText>
+      </div>
       <canvas ref={canvasRef} style={canvasStyle} />
       {outerVignette && <div style={outerVignetteStyle}></div>}
       {centerVignette && <div style={centerVignetteStyle}></div>}
-      <FuzzyText>Fuzzy Text</FuzzyText>
     </div>
   );
 };
