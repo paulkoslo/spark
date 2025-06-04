@@ -1,6 +1,6 @@
 'use client'
 
-import { HeroGradient } from '@reactbits/ui'
+import HeroGradient from './HeroGradient'
 import { motion } from 'framer-motion'
 
 export default function Hero() {
