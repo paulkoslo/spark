@@ -1,5 +1,6 @@
-import React, { useEffect, useRef, RefObject } from "react";
+import React, { useEffect, useRef, RefObject, useState } from "react";
 import { gsap } from "gsap";
+import { useMediaQuery } from "react-responsive";
 
 const lerp = (a: number, b: number, n: number): number => (1 - n) * a + n * b;
 
@@ -27,6 +28,9 @@ const Crosshair: React.FC<CrosshairProps> = ({
   color = "white",
   containerRef = null,
 }) => {
+  const [isClient, setIsClient] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
   const cursorRef = useRef<HTMLDivElement>(null);
   const lineHorizontalRef = useRef<HTMLDivElement>(null);
   const lineVerticalRef = useRef<HTMLDivElement>(null);
@@ -36,6 +40,25 @@ const Crosshair: React.FC<CrosshairProps> = ({
   let mouse = { x: 0, y: 0 };
 
   useEffect(() => {
+    setIsClient(true);
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    handleResize(); // Check on initial render
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (isMobile) {
+      // Disable crosshair on mobile devices
+      return;
+    }
+
     const handleMouseMove = (ev: Event) => {
       const mouseEvent = ev as MouseEvent;
       mouse = getMousePos(mouseEvent, containerRef?.current);
@@ -177,7 +200,11 @@ const Crosshair: React.FC<CrosshairProps> = ({
         link.removeEventListener("mouseleave", leave);
       });
     };
-  }, [containerRef]);
+  }, [containerRef, isMobile]);
+
+  if (!isClient || isMobile) {
+    return null; // Do not render the crosshair on the server or for mobile
+  }
 
   return (
     <div

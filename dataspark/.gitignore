@@ -12,3 +12,6 @@ __pycache__/
 
 # macOS
 .DS_Store
+
+# Ignore symbolic links causing issues
+node_modules/gsap/all.js
