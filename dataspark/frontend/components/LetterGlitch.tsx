@@ -1,4 +1,5 @@
 // @ts-nocheck
+"use client";
 import { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import FuzzyText from './FuzzyText';
@@ -272,7 +273,8 @@ const LetterGlitch = ({
   return (
     <div style={containerStyle}>
       <div style={textStyle}>
-        <FuzzyText fontSize={window.innerWidth < 768 ? 40 : 90}>DolphinData</FuzzyText>
+        <FuzzyText>DolphinData</FuzzyText>
+        
       </div>
       <canvas ref={canvasRef} style={canvasStyle} />
       {outerVignette && <div style={outerVignetteStyle}></div>}

@@ -1,3 +1,5 @@
+
+"use client";
 import React, { useEffect, useRef, RefObject, useState } from "react";
 import { gsap } from "gsap";
 import { useMediaQuery } from "react-responsive";
@@ -266,7 +268,7 @@ const Crosshair: React.FC<CrosshairProps> = ({
         ref={lineVerticalRef}
         style={{
           position: "absolute",
-          height: "280vh", // Make the vertical line span the entire page height
+          height: "300vh", // Make the vertical line span the entire page height
           width: "1px",
           background: color,
           pointerEvents: "none",
