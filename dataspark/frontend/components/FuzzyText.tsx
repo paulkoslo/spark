@@ -31,14 +31,20 @@ export default function FuzzyText({
   useEffect(() => {
     // Update font size based on screen width on the client side
     const updateFontSize = () => {
-      setFontSize(window.innerWidth < 768 ? 40 : 90);
+      if (typeof window !== "undefined") {
+        setFontSize(window.innerWidth < 768 ? 40 : 90);
+      }
     };
 
     updateFontSize(); // Set initial value
-    window.addEventListener("resize", updateFontSize);
+    if (typeof window !== "undefined") {
+      window.addEventListener("resize", updateFontSize);
+    }
 
     return () => {
-      window.removeEventListener("resize", updateFontSize);
+      if (typeof window !== "undefined") {
+        window.removeEventListener("resize", updateFontSize);
+      }
     };
   }, []);
 
