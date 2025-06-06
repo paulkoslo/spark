@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 
 interface FuzzyTextProps {
   children: React.ReactNode;
@@ -15,7 +15,7 @@ interface FuzzyTextProps {
 
 export default function FuzzyText({
   children,
-  fontSize = window.innerWidth < 768 ? 40 : 90, // Dynamically adjust font size based on screen width
+  fontSize: initialFontSize,
   fontWeight = 900,
   fontFamily = "inherit",
   color = "#fff",
@@ -26,6 +26,21 @@ export default function FuzzyText({
   const canvasRef = useRef<HTMLCanvasElement & { cleanupFuzzyText?: () => void }>(
     null
   );
+  const [fontSize, setFontSize] = useState<number | string>(initialFontSize || 90);
+
+  useEffect(() => {
+    // Update font size based on screen width on the client side
+    const updateFontSize = () => {
+      setFontSize(window.innerWidth < 768 ? 40 : 90);
+    };
+
+    updateFontSize(); // Set initial value
+    window.addEventListener("resize", updateFontSize);
+
+    return () => {
+      window.removeEventListener("resize", updateFontSize);
+    };
+  }, []);
 
   useEffect(() => {
     let animationFrameId: number;
