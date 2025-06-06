@@ -10,7 +10,7 @@ A minimal full-stack template combining Next.js and FastAPI. Start small, scale 
 ## One-Time Setup
 ```bash
 pnpm install --frozen-lockfile --dir frontend
-python -m venv venv && source venv/bin/activate
+python3 -m venv venv && source venv/bin/activate
 pip install -r backend/requirements.txt
 ```
 
