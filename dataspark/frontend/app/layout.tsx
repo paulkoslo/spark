@@ -1,6 +1,7 @@
 import './globals.css';
 import React from 'react';
 import Hero from '../components/Hero';
+import FloatingHeader from '../components/FloatingHeader';
 
 export const metadata = {
   title: 'Dataspark',
@@ -11,6 +12,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className="overscroll-none">
       <body className="bg-[#041B56] text-slate-100 overscroll-none">
+        <FloatingHeader />
         <Hero />
         {children}
       </body>
