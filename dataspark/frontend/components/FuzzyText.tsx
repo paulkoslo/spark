@@ -15,7 +15,7 @@ interface FuzzyTextProps {
 
 export default function FuzzyText({
   children,
-  fontSize = 90, // Increased font size
+  fontSize = window.innerWidth < 768 ? 40 : 90, // Dynamically adjust font size based on screen width
   fontWeight = 900,
   fontFamily = "inherit",
   color = "#fff",

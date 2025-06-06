@@ -4,11 +4,11 @@ import LetterGlitch from "./LetterGlitch";
 
 export default function Hero() {
   return (
-    <section className="relative flex items-center justify-center min-h-[60vh] text-center bg-[#000033]">
+    <section className="relative flex items-center justify-center min-h-screen text-center bg-[#000033]">
       <LetterGlitch
         glitchSpeed={50}
         centerVignette={true}
-        outerVignette={false}
+        outerVignette={true}
         smooth={true}
       />
     </section>
