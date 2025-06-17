@@ -11,23 +11,23 @@ import {
 const services = [
   {
     icon: ChartBarIcon,
-    title: "End-to-End Analytics",
-    desc: "From data collection to actionable reports—complete solution, tailored.",
+    title: "Data Rescue & Cleanup",
+    desc: "We turn your messy exports into clean, usable gold—fast. No more data headaches.",
   },
   {
     icon: ChartPieIcon,
-    title: "Interactive Dashboards",
-    desc: "Real-time visualisation. See your business pulse at a glance.",
+    title: "Plug & Play Dashboards",
+    desc: "Instant, interactive dashboards. See your business pulse in real time—no code, no waiting.",
   },
   {
     icon: WrenchScrewdriverIcon,
-    title: "Custom AI Tools",
-    desc: "Machine-learning solutions that get smarter over time.",
+    title: "Automation & AI Boosts",
+    desc: "Let bots do the boring stuff. From auto-reports to smart predictions, we build what you actually need.",
   },
   {
     icon: ClipboardDocumentCheckIcon,
-    title: "Data Strategy Audits",
-    desc: "Uncover hidden opportunities; map your analytics journey.",
+    title: "Quick-Start Data Audits",
+    desc: "Send us your mess. We’ll show you what’s possible—no jargon, just clear wins.",
   },
 ];
 

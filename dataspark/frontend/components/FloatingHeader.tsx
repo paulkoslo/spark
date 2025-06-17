@@ -74,7 +74,7 @@ export default function FloatingHeader({
             className="absolute right-0 top-full mt-2 backdrop-blur-lg bg-white bg-opacity-10 rounded-xl shadow-2xl py-6 px-8 w-[300px] transition-transform duration-300 transform scale-100 opacity-100"
             style={{ backgroundColor: `rgba(255, 255, 255, 0.1)` }}
           >
-            {['About Us', 'Services', 'Contact'].map((item, index) => (
+            {[{ label: 'Home', href: '/' }, { label: 'About Us', href: '/about-us' }, { label: 'Services', href: '#' }, { label: 'Contact', href: '#' }].map((item, index) => (
               <motion.div
                 key={index}
                 className="block px-8 py-4 text-xl transition w-full"
@@ -83,11 +83,13 @@ export default function FloatingHeader({
                 animate={{
                   backgroundColor: currentIndex === index ? 'rgba(255, 255, 255, 0.5)' : 'transparent',
                   filter: currentIndex === index ? 'blur(0px)' : 'blur(1.3px)',
-                  borderRadius: '1rem', // Added rounded edges to match the menu box
+                  borderRadius: '1rem',
                 }}
                 transition={{ duration: 0.3 }}
               >
-                {item}
+                <Link href={item.href} className="w-full h-full block">
+                  {item.label}
+                </Link>
               </motion.div>
             ))}
           </div>

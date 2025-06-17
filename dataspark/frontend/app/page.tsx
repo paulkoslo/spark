@@ -11,7 +11,11 @@ export default function Home() {
       <StatsBar />
       <CtaBanner />
       <footer className="mt-auto p-4 text-center text-sm text-slate-400">
-        &copy; {new Date().getFullYear()} Dataspark
+        &copy; {new Date().getFullYear()} DolphinData
+        <br />
+        <a href="mailto:team@dolphindata.io" className="underline hover:text-accent">team@dolphindata.io</a>
+        <span className="mx-2">|</span>
+        +49 30 5557 8900
       </footer>
     </main>
   );
