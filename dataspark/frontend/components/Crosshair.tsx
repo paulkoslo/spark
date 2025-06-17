@@ -1,4 +1,3 @@
-
 "use client";
 import React, { useEffect, useRef, RefObject, useState } from "react";
 import { gsap } from "gsap";
@@ -255,25 +254,29 @@ const Crosshair: React.FC<CrosshairProps> = ({
       <div
         ref={lineHorizontalRef}
         style={{
-          position: "absolute",
-          width: "100%",
+          position: "absolute", // revert to absolute so it moves with the container
+          left: 0,
+          top: 0,
+          width: "100%", // span the full width of the container
           height: "1px",
           background: color,
           pointerEvents: "none",
-          transform: "translateY(50%)",
           opacity: 0,
+          zIndex: 10001,
         }}
       />
       <div
         ref={lineVerticalRef}
         style={{
-          position: "absolute",
-          height: "300vh", // Make the vertical line span the entire page height
+          position: "fixed", // keep fixed for vertical line
+          left: 0,
+          top: 0,
+          height: "100vh",
           width: "1px",
           background: color,
           pointerEvents: "none",
-          transform: "translateX(50%)",
           opacity: 0,
+          zIndex: 10001,
         }}
       />
     </div>
