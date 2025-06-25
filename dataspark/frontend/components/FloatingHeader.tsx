@@ -74,7 +74,7 @@ export default function FloatingHeader({
             className="absolute right-0 top-full mt-2 backdrop-blur-lg bg-white bg-opacity-10 rounded-xl shadow-2xl py-6 px-8 w-[300px] transition-transform duration-300 transform scale-100 opacity-100"
             style={{ backgroundColor: `rgba(255, 255, 255, 0.1)` }}
           >
-            {[{ label: 'Home', href: '/' }, { label: 'About Us', href: '/about-us' }, { label: 'Services', href: '#' }, { label: 'Contact', href: '#' }].map((item, index) => (
+            {[{ label: 'Home', href: '/' }, { label: 'Services', href: '#' }, { label: 'Contact', href: '#contact' }].map((item, index) => (
               <motion.div
                 key={index}
                 className="block px-8 py-4 text-xl transition w-full"

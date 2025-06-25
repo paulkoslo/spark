@@ -27,14 +27,14 @@ const services = [
   {
     icon: ClipboardDocumentCheckIcon,
     title: "Quick-Start Data Audits",
-    desc: "Send us your mess. We’ll show you what’s possible—no jargon, just clear wins.",
+    desc: "Send us your mess. We'll show you what's possible—no jargon, just clear wins.",
   },
 ];
 
 export default function ServicesGrid() {
   return (
     <Section>
-      <div className="grid md:grid-cols-2 gap-8 items-center">
+      <div className="grid md:grid-cols-2 gap-8 items-stretch">
         <div className="grid sm:grid-cols-2 gap-6 order-2 md:order-1">
           {services.map((service) => (
             <GlassCard key={service.title} className="p-6 space-y-2">
@@ -44,14 +44,17 @@ export default function ServicesGrid() {
             </GlassCard>
           ))}
         </div>
-        <div className="relative h-64 md:h-80 order-1 md:order-2">
-          <Image
-            src="https://images.unsplash.com/photo-1665686306089-3d2845cffb32?auto=format&fit=crop&w=800&q=80"
-            alt="Engineer at big monitor"
-            fill
-            className="object-cover rounded-2xl"
-            priority
-          />
+        <div className="relative w-full h-full min-h-full flex items-start order-1 md:order-2">
+          <div className="relative w-full h-full min-h-full" style={{ minHeight: '100%' }}>
+            <Image
+              src="/images/man_infront_of_Screens.png"
+              alt="Engineer at big monitor"
+              fill
+              className="object-cover rounded-2xl"
+              style={{ objectPosition: 'top' }}
+              priority
+            />
+          </div>
         </div>
       </div>
     </Section>
