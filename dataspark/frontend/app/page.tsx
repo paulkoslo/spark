@@ -2,17 +2,30 @@ import Challenge from "../components/Challenge";
 import ServicesGrid from "../components/ServicesGrid";
 import StatsBar from "../components/StatsBar";
 import CtaBanner from "../components/CtaBanner";
+import DecryptedText from "../components/DecryptedText";
 
 export default function Home() {
   return (
     <main className="flex flex-col">
-      <h2 className="text-4xl md:text-5xl font-extrabold text-accent mb-8 mt-8 text-center drop-shadow">Tame Your Data Chaos</h2>
+      <div id="tame-your-data-chaos" className="scroll-mt-56"></div>
+      <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-2 mt-8 text-center drop-shadow">
+        <DecryptedText text="Tame Your Data Chaos" animateOn="view" className="text-4xl md:text-5xl font-extrabold text-white drop-shadow" />
+      </h2>
       <Challenge />
-      <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 mt-16 text-center">What We Do Best</h2>
+      <div id="what-we-do-best" className="scroll-mt-56"></div>
+      <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-2 mt-12 text-center">
+        <DecryptedText text="What We Do Best" animateOn="view" className="text-4xl md:text-5xl font-extrabold text-white drop-shadow" />
+      </h2>
       <ServicesGrid />
-      <h2 className="text-2xl md:text-3xl font-semibold text-accent mb-8 mt-16 text-center">Why Teams Choose Us</h2>
+      <div id="why-teams-choose-us" className="scroll-mt-56"></div>
+      <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-2 mt-12 text-center">
+        <DecryptedText text="Why Teams Choose Us" animateOn="view" className="text-4xl md:text-5xl font-extrabold text-white drop-shadow" />
+      </h2>
       <StatsBar />
-      <h2 className="text-2xl md:text-3xl font-semibold text-white mb-8 mt-16 text-center">Get Started in Seconds</h2>
+      <div id="get-started-in-seconds" className="scroll-mt-32"></div>
+      <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-2 mt-12 text-center">
+        <DecryptedText text="Get Started in Seconds" animateOn="view" className="text-4xl md:text-5xl font-extrabold text-white drop-shadow" />
+      </h2>
       <CtaBanner />
       <footer className="mt-auto p-4 text-center text-sm text-slate-400">
         &copy; {new Date().getFullYear()} DolphinData
